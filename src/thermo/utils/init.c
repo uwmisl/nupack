@@ -329,7 +329,9 @@ void PrecomputeValuesN5( int seqlength) {
 /* *********************** */
 void PrecomputeValuesN5f( int seqlength) {
   int i;
-
+  if ( sizeTerm != NULL) {
+    free(sizeTerm);
+  }
   sizeTerm = (DBL_TYPE *) calloc( seqlength, sizeof( DBL_TYPE) );
   if( sizeTerm == NULL) {
     fprintf(stderr, "UnaPrecomputeValuesN5f: ble to allocate memory for sizeTerm!\n");

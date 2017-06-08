@@ -504,9 +504,6 @@ DBL_TYPE pfuncFullWithSymHelper( int inputSeq[], int seqlength, int nStrands,
       
       Qgl = Qgr = Qgls = Qgrs = QgIx = QgIx_1 = QgIx_2 = NULL;
       possiblePairs = NULL;
-      
-      free(sizeTerm);
-      sizeTerm = NULL;
     }
   }
 

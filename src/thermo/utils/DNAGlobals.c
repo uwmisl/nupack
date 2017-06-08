@@ -29,7 +29,7 @@ DBL_TYPE dangle_energy[48]; // Dangle Energies
 DBL_TYPE asymmetry_penalty[4]; // Asymmetric loop penalties
 DBL_TYPE max_asymmetry;
 long int maxGapIndex;
-DBL_TYPE *sizeTerm;
+DBL_TYPE *sizeTerm = NULL;
 DBL_TYPE BIMOLECULAR;
 
 DBL_TYPE AT_PENALTY;
