@@ -547,6 +547,8 @@ void LoadEnergies( void) {
   static int params = -1;
   static int dtype = -1;
   static char parameterFileName[300] = "\0";
+  static DBL_TYPE na_conc = 0;
+  static DBL_TYPE mg_conc = 0;
   
 
   /*
@@ -560,11 +562,13 @@ void LoadEnergies( void) {
   //check if parameters have been loaded (or have changed)
   if( temp != TEMP_K || temp == 0 || params != DNARNACOUNT || 
      (params == USE_SPECIFIED_PARAMETERS_FILE && strcmp( parameterFileName, PARAM_FILE) != 0) 
-     || dtype != DANGLETYPE ) {
+     || dtype != DANGLETYPE || na_conc != SODIUM_CONC || mg_conc != MAGNESIUM_CONC) {
        energySet = FALSE;
        temp = TEMP_K;
        params = DNARNACOUNT;
        dtype = DANGLETYPE;
+       na_conc = SODIUM_CONC;
+       mg_conc = MAGNESIUM_CONC;
      }
   
   if( energySet == TRUE) return; //only load energy once
